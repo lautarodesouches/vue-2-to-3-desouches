@@ -1,6 +1,6 @@
-import Vue from 'vue'
+import { createApp } from 'vue'
 // -----------------------------------------------
-import VueRouter from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router'
 // -----------------------------------------------
 import { routes } from './routes/router'
 // -----------------------------------------------
@@ -11,17 +11,9 @@ import VueAxios from 'vue-axios'
 // -----------------------------------------------
 import store from './store'
 // -----------------------------------------------
-const router = new VueRouter({
-  routes
+const router = createRouter({
+    history: createWebHistory(),
+    routes
 })
 // -----------------------------------------------
-Vue.use(VueAxios, axios).use(VueRouter)
-new Vue({
-  router,
-  data() {
-    return {
-    }
-  },
-  store,
-  render: h => h(App)
-}).$mount('#app')
+createApp(App).use(store).use(router).use(VueAxios, axios).mount('#app')

@@ -2,9 +2,7 @@ import Vuex from 'vuex'
 // -----------------------------------------------
 import axios from 'axios'
 import { API_URL } from '../utils/api.js'
-import Vue from 'vue'
 // -----------------------------------------------
-Vue.use(Vuex)
 export default new Vuex.Store({
     state: {
         data: [],

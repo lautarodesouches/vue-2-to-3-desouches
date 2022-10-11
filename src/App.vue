@@ -4,7 +4,7 @@
       <h2 class='loading'>Cargando...</h2>
     </div>
     <div class='div' v-if='!this.$store.getters.getLoading'>
-      <router-view></router-view>
+      <router-view />
     </div>
   </main>
 </template>
